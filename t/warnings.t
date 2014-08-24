@@ -20,7 +20,7 @@ use warnings 'UNIVERSAL::isa';
 }
 
 my $foo = bless {}, 'Foo';
-my $bar = bless {}, 'bar';
+my $bar = bless {}, 'Bar';
 
 {
     my $warning          = '';
