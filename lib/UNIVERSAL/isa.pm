@@ -101,10 +101,6 @@ __END__
 
 =pod
 
-=head1 NAME
-
-UNIVERSAL::isa - recover from people calling UNIVERSAL::isa as a function
-
 =head1 SYNOPSIS
 
     # from the shell
@@ -165,18 +161,5 @@ C<isa()>.
 
 Any decent explanation of OO to understand why calling methods as functions is
 a staggeringly bad idea.
-
-=head1 AUTHORS
-
-Audrey Tang <cpan@audreyt.org>
-
-chromatic <chromatic@wgz.org>
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright (c) 2005 - 2011, chromatic. This module is made available under the
-same terms as Perl 5.12.
 
 =cut
