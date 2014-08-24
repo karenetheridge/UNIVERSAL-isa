@@ -1,3 +1,7 @@
-!.gitignore
-UNIVERSAL-isa-*
-.prove
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/.prove
+/UNIVERSAL-isa-*/
+/UNIVERSAL-isa-*.tar.gz
