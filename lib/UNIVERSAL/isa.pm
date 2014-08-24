@@ -85,8 +85,11 @@ sub report_warning
 
     if ( warnings::enabled() )
     {
-        my $calling_sub = ( caller(3) )[3] || '';
-        return if $calling_sub =~ /::isa$/;
+        # check calling sub
+        return if (( caller(3) )[3] || '') =~ /::isa$/;
+        # check calling package - exempt Test::Builder??
+        return if (( caller(3) )[0] || '') =~ /^Test::Builder/;
+
         warnings::warn(
             "Called UNIVERSAL::isa() as a function, not a method$extra" );
     }

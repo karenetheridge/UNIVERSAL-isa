@@ -2,6 +2,8 @@ Changes for UNIVERSAL::isa
 --------------------------
 
 {{$NEXT}}
+    - fix tests that started failing with new development versions of
+      Test::Builder (RT#97468)
 
 1.20120726 2012-07-25 20:51:54 America/Los_Angeles
     - updated to work on Perl 5.17.2+ (rjbs)
