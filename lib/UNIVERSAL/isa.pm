@@ -31,28 +31,28 @@ no warnings 'redefine';
 sub UNIVERSAL::isa
 {
     goto &$orig if $_recursing;
-    my $type = invocant_type(@_);
+    my $type = _invocant_type(@_);
     $type->(@_);
 }
 use warnings;
 
-sub invocant_type
+sub _invocant_type
 {
     my $invocant = shift;
-    return \&nonsense unless defined($invocant);
-    return \&object_or_class if blessed($invocant);
-    return \&reference       if ref($invocant);
-    return \&nonsense unless $invocant;
-    return \&object_or_class;
+    return \&_nonsense unless defined($invocant);
+    return \&_object_or_class if blessed($invocant);
+    return \&_reference       if ref($invocant);
+    return \&_nonsense unless $invocant;
+    return \&_object_or_class;
 }
 
-sub nonsense
+sub _nonsense
 {
-    report_warning('on invalid invocant') if $verbose_warning;
+    _report_warning('on invalid invocant') if $verbose_warning;
     return;
 }
 
-sub object_or_class
+sub _object_or_class
 {
     local $@;
     local $_recursing = 1;
@@ -61,24 +61,24 @@ sub object_or_class
     {
         unless ( $override == \&UNIVERSAL::isa )
         {
-            report_warning();
+            _report_warning();
             my $obj = shift;
             return $obj->$override(@_);
         }
     }
 
-    report_warning() if $verbose_warning;
+    _report_warning() if $verbose_warning;
     goto &$orig;
 }
 
-sub reference
+sub _reference
 {
-    report_warning('Did you mean to use Scalar::Util::reftype() instead?')
+    _report_warning('Did you mean to use Scalar::Util::reftype() instead?')
         if $verbose_warning;
     goto &$orig;
 }
 
-sub report_warning
+sub _report_warning
 {
     my $extra = shift;
     $extra = $extra ? " ($extra)" : '';
