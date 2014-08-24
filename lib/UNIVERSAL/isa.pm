@@ -13,8 +13,6 @@ my ( $orig, $verbose_warning );
 
 BEGIN { $orig = \&UNIVERSAL::isa }
 
-no warnings 'redefine';
-
 sub import
 {
     my $class = shift;
@@ -29,12 +27,14 @@ sub import
 
 our $_recursing;
 
+no warnings 'redefine';
 sub UNIVERSAL::isa
 {
     goto &$orig if $_recursing;
     my $type = invocant_type(@_);
     $type->(@_);
 }
+use warnings;
 
 sub invocant_type
 {
