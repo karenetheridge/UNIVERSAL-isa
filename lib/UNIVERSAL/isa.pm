@@ -8,7 +8,6 @@ use 5.6.2;
 our $recursing;
 
 use UNIVERSAL ();
-
 use Scalar::Util 'blessed';
 use warnings::register;
 
@@ -55,7 +54,6 @@ sub nonsense
 
 sub object_or_class
 {
-
     local $@;
     local $recursing = 1;
 

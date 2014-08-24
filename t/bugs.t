@@ -2,9 +2,7 @@ use strict;
 use warnings;
 
 use Test::More tests => 11;
-
 use UNIVERSAL::isa 'isa';
-
 no warnings 'UNIVERSAL::isa';
 
 # class method

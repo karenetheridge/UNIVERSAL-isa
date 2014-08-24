@@ -2,14 +2,11 @@ use strict;
 use warnings;
 
 use Test::More tests => 52;
-
 use UNIVERSAL::isa 'isa';
-
 use warnings;
 
 {
     package Foo;
-
     sub isa { 1 }
 }
 
@@ -38,7 +35,6 @@ use warnings;
 my ($f, $b, $g, $x) = map { bless [], $_ } qw( Foo Bar Gorch Baz );
 
 {
-
     my $warning = '';
     local $SIG{__WARN__} = sub { $warning = shift };
 
