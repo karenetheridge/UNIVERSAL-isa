@@ -3,7 +3,6 @@ use warnings;
 
 use Test::More tests => 52;
 use UNIVERSAL::isa 'isa';
-use warnings;
 
 {
     package Foo;
