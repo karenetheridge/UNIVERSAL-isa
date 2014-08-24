@@ -5,8 +5,6 @@ use strict;
 use warnings;
 use 5.6.2;
 
-our $recursing;
-
 use UNIVERSAL ();
 use Scalar::Util 'blessed';
 use warnings::register;
@@ -29,9 +27,11 @@ sub import
     }
 }
 
+our $_recursing;
+
 sub UNIVERSAL::isa
 {
-    goto &$orig if $recursing;
+    goto &$orig if $_recursing;
     my $type = invocant_type(@_);
     $type->(@_);
 }
@@ -55,7 +55,7 @@ sub nonsense
 sub object_or_class
 {
     local $@;
-    local $recursing = 1;
+    local $_recursing = 1;
 
     if ( my $override = eval { $_[0]->can('isa') } )
     {
