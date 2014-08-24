@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use 5.6.2;
 
-use vars qw( $recursing );
+our $recursing;
 
 use UNIVERSAL ();
 

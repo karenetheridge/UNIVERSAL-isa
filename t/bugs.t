@@ -60,7 +60,7 @@ no warnings 'UNIVERSAL::isa';
 {
     package Quux;
 
-    use vars '$AUTOLOAD';
+    our $AUTOLOAD;
     sub isa;
 
     sub new
