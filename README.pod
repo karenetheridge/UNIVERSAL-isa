@@ -8,7 +8,7 @@ UNIVERSAL::isa - Attempt to recover from people calling UNIVERSAL::isa as a func
 
 =head1 VERSION
 
-version 1.20140824
+version 1.20140927
 
 =head1 SYNOPSIS
 
