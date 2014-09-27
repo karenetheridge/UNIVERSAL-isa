@@ -89,6 +89,7 @@ sub _report_warning
         return if (( caller(3) )[3] || '') =~ /::isa$/;
         # check calling package - exempt Test::Builder??
         return if (( caller(3) )[0] || '') =~ /^Test::Builder/;
+        return if (( caller(2) )[0] || '') =~ /^Test::Stream/;
 
         warnings::warn(
             "Called UNIVERSAL::isa() as a function, not a method$extra" );
