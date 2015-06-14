@@ -7,7 +7,7 @@ our $VERSION = '1.20150614';
 
 use 5.006002;
 
-use Scalar::Util 'blessed';
+use Scalar::Util ();
 use warnings::register; # creates a warnings category for this module
 
 my ( $orig, $verbose_warning );
@@ -41,7 +41,7 @@ sub _invocant_type
 {
     my $invocant = shift;
     return \&_nonsense unless defined($invocant);
-    return \&_object_or_class if blessed($invocant);
+    return \&_object_or_class if Scalar::Util::blessed($invocant);
     return \&_reference       if ref($invocant);
     return \&_nonsense unless $invocant;
     return \&_object_or_class;
