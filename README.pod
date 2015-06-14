@@ -8,7 +8,7 @@ UNIVERSAL::isa - Attempt to recover from people calling UNIVERSAL::isa as a func
 
 =head1 VERSION
 
-version 1.20140927
+version 1.20150614
 
 =head1 SYNOPSIS
 
@@ -89,13 +89,6 @@ chromatic <chromatic@wgz.org>
 
 =back
 
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by chromatic@wgz.org.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
 =head1 CONTRIBUTORS
 
 =for stopwords Karen Etheridge Ricardo Signes
@@ -111,5 +104,12 @@ Karen Etheridge <ether@cpan.org>
 Ricardo Signes <rjbs@cpan.org>
 
 =back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by chromatic@wgz.org.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

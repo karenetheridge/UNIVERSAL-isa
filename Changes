@@ -1,7 +1,7 @@
 Changes for UNIVERSAL::isa
 --------------------------
 
-{{$NEXT}}
+1.20150614  2015-06-14 23:16:46Z
     - remove useless 'use UNIVERSAL'
 
 1.20140927  2014-09-27 04:21:23Z
