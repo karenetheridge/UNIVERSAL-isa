@@ -3,7 +3,7 @@ use warnings;
 package UNIVERSAL::isa;
 # ABSTRACT: Attempt to recover from people calling UNIVERSAL::isa as a function
 
-use 5.6.2;
+use 5.006002;
 
 use Scalar::Util 'blessed';
 use warnings::register; # creates a warnings category for this module
