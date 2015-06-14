@@ -1,8 +1,8 @@
+use strict;
+use warnings;
 package UNIVERSAL::isa;
 # ABSTRACT: Attempt to recover from people calling UNIVERSAL::isa as a function
 
-use strict;
-use warnings;
 use 5.6.2;
 
 use Scalar::Util 'blessed';
