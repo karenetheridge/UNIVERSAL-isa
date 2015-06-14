@@ -6,7 +6,7 @@ use warnings;
 use 5.6.2;
 
 use Scalar::Util 'blessed';
-use warnings::register;
+use warnings::register; # creates a warnings category for this module
 
 my ( $orig, $verbose_warning );
 
