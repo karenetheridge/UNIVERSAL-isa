@@ -2,6 +2,7 @@ Changes for UNIVERSAL::isa
 --------------------------
 
 {{$NEXT}}
+    - remove useless 'use UNIVERSAL'
 
 1.20140927  2014-09-27 04:21:23Z
     - fix tests for even newer development versions of Test::More

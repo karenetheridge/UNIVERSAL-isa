@@ -5,7 +5,6 @@ use strict;
 use warnings;
 use 5.6.2;
 
-use UNIVERSAL ();
 use Scalar::Util 'blessed';
 use warnings::register;
 
