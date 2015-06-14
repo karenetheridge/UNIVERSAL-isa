@@ -3,6 +3,8 @@ use warnings;
 package UNIVERSAL::isa;
 # ABSTRACT: Attempt to recover from people calling UNIVERSAL::isa as a function
 
+our $VERSION = '1.20150614';
+
 use 5.006002;
 
 use Scalar::Util 'blessed';
