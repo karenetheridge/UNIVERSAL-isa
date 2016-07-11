@@ -119,11 +119,11 @@ TODO: {
     use warnings 'UNIVERSAL::isa';
 
     # Broken how? -- rjbs, 2012-07-24
-    local $TODO = 'Apparently broken in 5.6.x' if $] < 5.007;
+    local $TODO = 'Apparently broken in 5.6.x' if "$]" < 5.007;
 
     {
         local $TODO = "UnloadedClass->isa('UNIVERSAL') fails until 5.17.2"
-            if $] < 5.017002;
+            if "$]" < 5.017002;
 
         ok( UnloadedClass->isa( 'UNIVERSAL' ),
             'unloaded class should inherit from UNIVERSAL' );
