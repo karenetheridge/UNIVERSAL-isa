@@ -10,9 +10,10 @@ use 5.006002;
 use Scalar::Util ();
 use warnings::register; # creates a warnings category for this module
 
-my ( $orig, $verbose_warning );
+my ( $verbose_warning );
+sub original_isa;
 
-BEGIN { $orig = \&UNIVERSAL::isa }
+BEGIN { *original_isa = \&UNIVERSAL::isa }
 
 sub import
 {
@@ -31,7 +32,7 @@ our $_recursing;
 no warnings 'redefine';
 sub UNIVERSAL::isa
 {
-    goto &$orig if $_recursing;
+    goto &original_isa if $_recursing;
     my $type = _invocant_type(@_);
     $type->(@_);
 }
@@ -69,14 +70,14 @@ sub _object_or_class
     }
 
     _report_warning() if $verbose_warning;
-    goto &$orig;
+    goto &original_isa;
 }
 
 sub _reference
 {
     _report_warning('Did you mean to use Scalar::Util::reftype() instead?')
         if $verbose_warning;
-    goto &$orig;
+    goto &original_isa;
 }
 
 sub _report_warning
