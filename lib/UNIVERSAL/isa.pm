@@ -10,10 +10,11 @@ use 5.006002;
 use Scalar::Util ();
 use warnings::register; # creates a warnings category for this module
 
-my ( $verbose_warning );
-sub original_isa;
+my ( $orig, $verbose_warning );
 
-BEGIN { *original_isa = \&UNIVERSAL::isa }
+BEGIN { $orig = \&UNIVERSAL::isa }
+
+sub original_isa { goto $orig }
 
 sub import
 {
