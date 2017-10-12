@@ -131,6 +131,13 @@ In all other cases, the real C<UNIVERSAL::isa> gets called directly.
 B<NOTE:> You should use this module only for debugging purposes. It does not
 belong as a dependency in running code.
 
+=head1 FUNCTIONS
+
+=head2 original_isa
+
+This sub contains the definition of the I<original> C<UNIVERSAL::isa>
+definition, in case you need it.
+
 =head1 WARNINGS
 
 If the lexical warnings pragma is available, this module will emit a warning
