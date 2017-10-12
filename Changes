@@ -2,6 +2,7 @@ Changes for UNIVERSAL::isa
 --------------------------
 
 {{$NEXT}}
+    - original isa sub is now available in original_isa() (Graham Knop, PR#1)
 
 1.20150614  2015-06-14 23:16:46Z
     - remove useless 'use UNIVERSAL'
