@@ -91,7 +91,7 @@ ok(   isa( $quux, 'Foo' ), '... and should work on delegated wrappers' );
 is( scalar(isa(undef, 'Foo')), undef, 'isa on undef returns undef');
 
 SKIP: {
-    eval { require CGI };
+    eval { +require CGI };
     skip( 'CGI not installed; RT #19671', 1 ) if $@;
 
     isa_ok( CGI->new(''), 'CGI' );
