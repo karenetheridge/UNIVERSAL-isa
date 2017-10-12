@@ -3,7 +3,7 @@ use warnings;
 package UNIVERSAL::isa;
 # ABSTRACT: Attempt to recover from people calling UNIVERSAL::isa as a function
 
-our $VERSION = '1.20150615';
+our $VERSION = '1.20171013';
 
 use 5.006002;
 
